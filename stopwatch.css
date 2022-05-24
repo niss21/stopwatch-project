@@ -1,0 +1,82 @@
+*{
+    margin: 0;
+    padding: 0;
+   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.container{
+    height: 100vh;
+    width: 100%;
+    background-color: rgb(63, 61, 61);
+    position: absolute;
+    text-align: center;
+}
+
+.clock{
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.clock p{
+    position: relative;
+    display: inline-block;
+    color: aliceblue;
+    z-index: 9999;
+    font-size: 50px;
+    margin-bottom: 120px;
+   
+}
+
+.milisec{
+    font-size: 25px;
+}
+
+.clock p::before{
+    content: '';
+    position: absolute; 
+    width: 250px;
+    height: 250px;
+    /* border: 2px solid; */
+    border-radius: 50%;
+    background-color: rgb(26, 25, 25);
+    z-index: -1;
+    top: -150%;
+    left: -15%;
+    animation-name: shine;
+    animation-duration:5s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes shine{
+    0%,100%{
+        box-shadow: 0px 0px 32px -12px rgb(123, 77, 4);
+    }
+    50%{
+        box-shadow: 0px 0px 32px 3px rgb(6, 49, 109);
+    }
+}
+
+button{
+    background-color: black;
+    /* margin: 10px; */
+    padding: 10px 38px;
+    border: 2px solid black;
+    border-radius: 28px;
+    color: antiquewhite;
+    transition: all .3s ease;
+    outline: 0;
+}
+
+button:not(:last-child){
+    margin-top: 20px;
+    margin-right: 10px;
+}
+
+button:hover,button:focus{
+    cursor: pointer;
+    border-color: bisque;
+    color: antiquewhite;
+    box-shadow: 0px 0px 5px 3px rgb(122, 208, 16);
+}
